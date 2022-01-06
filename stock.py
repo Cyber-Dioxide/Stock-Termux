@@ -21,7 +21,7 @@ def main():
 	clear()
 	banner2()
 	a = input(f"{r}[1] {y}Zsh Theme\n{r}[2] {y}Fish Theme\n{ran}~Stock@temrux~> ")
-	if a == "zsh".lower:
+	if a == "1":
 		if which("apt") is not None:
 			if which("zsh") is not None:
 				command("apt install zsh")
@@ -31,7 +31,7 @@ def main():
 					make("~/.zshrc",'ZSH_THEME="agnoster" ')
 		else:
 			exit("Unexpected Error")
-	if a == "fish".lower:
+	if a == "2":
 		if which("apt") is not None:
 			if which("fish") is not None:
 				command("apt install zsh")
