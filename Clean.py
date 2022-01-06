@@ -15,8 +15,6 @@ def main():
     command("apt install zsh")
     sleep(1)
     sprint(g + "Preparing...")
-    command("apt update")
-    command("apt upgrade")
     command("cd $PREFIX/etc")
     command("rm - rf motd")
     try:
