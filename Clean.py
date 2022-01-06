@@ -1,3 +1,5 @@
+import os
+
 from scripts.sprint import command , sprint
 from scripts.banner import banner , clear,banner2
 from scripts.colors import r,y,c,g,ran
@@ -17,7 +19,8 @@ def main():
     sleep(1)
     sprint(g + "Preparing...")
     command("cd")
-    command("cd $PREFIX/etc")
+    command("cd $PREFIX/etc/")
+    command("ls")
     command("rm - rf motd")
     command("rm -rf motd-playstore")
     command("rm -rf motd.dpkg-dist")
