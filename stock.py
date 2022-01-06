@@ -3,7 +3,6 @@ from scripts.banner import banner , clear,banner2
 from scripts.colors import r,y,c,g,ran
 from time import sleep
 clear()
-from shutil import which
 def make(filename,name):
 	file = open(filename,"a+")
 	file.write(name)
@@ -22,25 +21,16 @@ def main():
 	banner2()
 	a = input(f"{r}[1] {y}Zsh Theme\n{r}[2] {y}Fish Theme\n{ran}~Stock@temrux~> ")
 	if a == "1":
-		if which("apt") is not None:
-			if which("zsh") is not None:
-				command("apt install zsh")
-				if which("curl") is not None:
-					command('sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
-					command("chsh -s $(which zsh)")
-					make("~/.zshrc",'ZSH_THEME="agnoster" ')
-		else:
-			exit("Unexpected Error")
-	if a == "2":
-		if which("apt") is not None:
-			if which("fish") is not None:
-				command("apt install zsh")
-				if which("curl") is not None:
-					command('curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish && omf install agnoster')
-					command("chsh -s $(which fish)")
-					make("~/.config/fish/config.fish",'set fish_greeting')
+			command('sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
+			command("chsh -s $(which zsh)")
+			make("~/.zshrc",'ZSH_THEME="agnoster" ')
 
-		else:
+	elif a == "2":
+			command('curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish && omf install agnoster')
+			command("chsh -s $(which fish)")
+			make("~/.config/fish/config.fish",'set fish_greeting')
+
+	else:
 			exit("Unexpected Error")
 
 	sprint(g + "Preparing...")
