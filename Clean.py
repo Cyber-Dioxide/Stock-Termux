@@ -24,6 +24,11 @@ def main():
 
     clear()
     command("chsh -s fish")
+    sprint(ran+"\n\n Restart your termux")
+    sprint(c+"\nExitting Temux...")
+
+    command("exit")
+
 
 
 
