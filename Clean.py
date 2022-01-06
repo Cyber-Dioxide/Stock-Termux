@@ -22,15 +22,20 @@ def main():
     except Exception:
         pass
 
+    print(r+"\n[1] "+c +"Install fish theme\n")
+    print(r +"[2] "+c +"Install zsh theme")
+    choice = input(ran + '\n~Stock@Trmux~> ')
+
+    if choice == "1":
+        command("chsh -s fish")
+
+    else:
+        command("chsh -s zsh")
+
     clear()
-    command("chsh -s fish")
-    sprint(ran+"\n\n Restart your termux")
-    sprint(c+"\nExitting Temux...")
 
+    sprint(ran+"\n\n Restart your termux to see changes")
     command("exit")
-
-
-
 
 if __name__ == '__main__':
     main()
