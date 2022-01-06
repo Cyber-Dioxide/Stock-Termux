@@ -40,6 +40,9 @@ def main():
 					command("chsh -s $(which fish)")
 					make("~/.config/fish/config.fish",'set fish_greeting')
 
+		else:
+			exit("Unexpected Error")
+
 	sprint(g + "Preparing...")
 
 	command("rm -rf $PREFIX/motd*")
