@@ -16,6 +16,7 @@ def main():
     command("apt install zsh")
     sleep(1)
     sprint(g + "Preparing...")
+    command("cd")
     command("cd $PREFIX/etc")
     command("rm - rf motd")
     command("rm -rf motd-playstore")
