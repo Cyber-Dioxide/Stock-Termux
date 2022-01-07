@@ -21,12 +21,12 @@ def main():
 	banner2()
 	a = input(f"{r}[1] {y}Zsh Theme\n{r}[2] {y}Fish Theme\n{ran}~Stock@temrux~> ")
 	if a == "1":
-			command('sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
+			command('apt install zsh -y && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"')
 			command("chsh -s $(which zsh)")
 			make("~/.zshrc",'ZSH_THEME="agnoster" ')
 
 	elif a == "2":
-			command('curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish && omf install agnoster')
+			command('apt install fish -y && curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish && omf install agnoster')
 			command("chsh -s $(which fish)")
 			make("~/.config/fish/config.fish",'set fish_greeting')
 
